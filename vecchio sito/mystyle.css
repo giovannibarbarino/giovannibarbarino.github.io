@@ -1,0 +1,215 @@
+body {
+    background-color: lightblue;
+}
+
+h1, h2, h3, h4 {
+    color: blue;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+h2 {
+    font-family: Verdana, Geneva, sans-serif;
+padding-left:20px;
+}
+
+h1{
+	align: 
+
+}
+
+/*
+p.firstFont {
+    font-family: helvetica;
+}
+
+p.secondFont {
+    font-family: georgia;
+}
+*/
+ul {
+     list-style-type: disc;
+}
+
+li {
+	margin: .2em 0;
+
+}
+
+ a {
+      text-decoration:none;
+   }
+
+
+body{
+  background: -webkit-linear-gradient(left, lightblue , white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, lightblue, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, lightblue, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, lightblue , white); /* Standard syntax */
+
+
+position:relative; 
+  
+
+}
+
+
+
+div.tesi{
+    
+    font-size: 18px;
+    border: 2px solid blue;
+    /*border-radius: 10% / 10%;*/
+     background: lightblue;
+    padding:5px 30px 5px 10px;
+
+
+    
+}
+
+div.top{
+	
+	padding:10px 10px 10px 10px;
+	display: inline-block;
+	position: fixed;
+    bottom: 50px;
+    right: 13%;
+   /* width: 200px;
+    height: 300px;*/
+     border-radius: 10% / 10%;
+     background: #33CCFF;
+    border: 2px solid #0099FF;
+    font-weight: bold;
+    font-size: 18px; 
+}
+
+
+
+div.right_window{
+	
+	padding:15px 40px 20px 30px;
+	display: inline-block;
+	position: absolute;
+    top: 150px;
+    right: 180px;
+/*left: -200px;
+   /* width: 200px;
+    height: 300px;*/
+     border-radius: 10% / 10%;
+  /*background: -webkit-radial-gradient(lightblue, white);  Safari 5.1 to 6.0 */
+  /*background: -o-radial-gradient(lightblue, white);  For Opera 11.6 to 12.0 */
+  /*background: -moz-radial-gradient(lightblue, white);  For Firefox 3.6 to 15 */
+  /*background: radial-gradient(#00FFFF , #FFFFFF );  Standard syntax */
+    
+  background: -webkit-linear-gradient(left, lightblue , white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, lightblue, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, lightblue, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #33ccff, white); /* Standard syntax */
+
+
+	/*background: #33FFCC;
+    border: 2px solid #33FFCC;*/
+     -moz-box-shadow:-5px 5px 2px #333333;
+    -webkit-box-shadow:-5px 5px 2px #333333;
+    box-shadow:-3px 3px 9px #333333;
+    font-weight: bold;
+    font-size: 18px; 
+}
+
+
+
+div.upperleft{
+	
+	/*padding:15px 30px 20px 30px;*/
+	display: inline-block;
+	position: absolute;
+    top: 30px;
+    right: 5%;
+   /* width: 200px;
+    height: 300px;
+     border-radius: 10% / 10%;
+     background: #33CCFF;
+    border: 2px solid #0099FF;*/
+    font-weight: bold;
+    font-size: 18px; 
+}
+
+div.menu{
+	
+	/*padding:15px 30px 20px 30px;*/
+	display: inline-block;
+	position: fixed;
+    top: 10px;
+    left: 3%;
+   /* width: 200px;
+    height: 300px;
+     border-radius: 10% / 10%;
+     background: #33CCFF;
+    border: 2px solid #0099FF;*/
+    font-weight: bold;
+    font-size: 30px; 
+}
+
+
+div.left_menu{
+	
+	/*padding:15px 30px 20px 30px;*/
+	display: inline-block;
+	position: fixed;
+
+    	left: -250px;
+	width: 250px;
+        border-style: double;
+	border-width: 0px 10px 0px 0px;
+
+background: #33CCFF;
+   /* 
+    height: 300px;
+     border-radius: 10% / 10%;
+     
+    border: 2px solid #0099FF;*/
+   
+}
+
+div.left_menu ul {
+  border-top: 1px solid #636366;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+div.left_menu li {
+  border-bottom: 1px solid #636366;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 45px;
+  padding-bottom: 3px;
+  padding-left: 20px;
+  padding-top: 3px;
+}
+
+div.left_menu a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+
+
+
+div.paddsn{
+    padding-left: 40px;
+    width: 45%;
+    
+    
+}
+
+
+div.paddsn2 {
+   padding-left: 40px 
+}
+
+div.cente {
+   text-align: center;
+    line-height: 30px;
+}
