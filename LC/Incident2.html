@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="Dagger.css">
+</head>
+<body onload="tiles()">
+
+
+
+<div id="chessboard">
+	<img class="chessboard_im" src="images/chessboard/OOAD630.jpg" >
+	
+	
+	<img class="single_piece tor_n1" src="images/Chess_rdt60.png" >
+	 	 
+	<img class="single_piece cav_n1" src="images/Chess_ndt60.png" >
+	 	 
+	<img class="single_piece alf_n1" src="images/Chess_bdt60.png" >
+
+ 	<img class="single_piece reg_n" src="images/Chess_qdt60.png" >
+	 	 
+	<img class="single_piece re_n" src="images/Chess_kdt60.png" >
+	 	 
+	<img class="single_piece alf_n2" src="images/Chess_bdt60.png" >
+	 	 
+	<img class="single_piece cav_n2" src="images/Chess_ndt60.png" >
+	 	 
+	<img class="single_piece tor_n2" src="images/Chess_rdt60.png" >
+	 
+		 
+	<img class="single_piece ped_n1" src="images/Chess_pdt60.png" >
+	 	 
+	<img class="single_piece ped_n2" src="images/Chess_pdt60.png" >
+	 	 
+	<img class="single_piece ped_n3" src="images/Chess_pdt60.png" >	 
+
+	<img class="single_piece ped_n4" src="images/Chess_pdt60.png" >
+	 
+	<img class="single_piece ped_n5" src="images/Chess_pdt60.png" >
+	 
+	<img class="single_piece ped_n6" src="images/Chess_pdt60.png" >
+	 	 
+	<img class="single_piece ped_n7" src="images/Chess_pdt60.png" >
+	
+	<img class="single_piece ped_n8" src="images/Chess_pdt60.png" >
+	 
+
+
+	<img class="single_piece tor_b1" src="images/Chess_rlt60.png" >
+	 
+	<img class="single_piece cav_b1" src="images/Chess_nlt60.png" >
+	 
+	<img class="single_piece alf_b1" src="images/Chess_blt60.png" >
+	 
+	<img class="single_piece reg_b" src="images/Chess_qlt60.png" >
+	 
+	<img class="single_piece re_b" src="images/Chess_klt60.png" >
+	 
+	<img class="single_piece alf_b2" src="images/Chess_blt60.png" >
+	 
+	<img class="single_piece cav_b2" src="images/Chess_nlt60.png" >
+	 
+	<img class="single_piece tor_b2" src="images/Chess_rlt60.png" >
+	 
+	 
+	 
+	<img class="single_piece ped_b1" src="images/Chess_plt60.png" >
+	 
+	<img class="single_piece ped_b2" src="images/Chess_plt60.png" >
+	 
+	<img class="single_piece ped_b3" src="images/Chess_plt60.png" >
+	 
+	<img class="single_piece ped_b4" src="images/Chess_plt60.png" >
+	 
+	<img class="single_piece ped_b5" src="images/Chess_plt60.png" >
+	  
+	<img class="single_piece ped_b6" src="images/Chess_plt60.png" >
+	
+	<img class="single_piece ped_b7" src="images/Chess_plt60.png" >
+	 
+	<img class="single_piece ped_b8" src="images/Chess_plt60.png" >
+	 
+	
+	
+	<button class="start_button" onclick="Game()">Start</button>
+	
+	<div id="GO">
+	GAME OVER
+	</div>
+	
+	<div id="YW">
+	YOU WIN
+	</div>
+	
+<div id="difficulty">
+	<p>Difficulty setting:</p>
+
+
+  <input type="range" id="depth_chooser" name="depth" min="1" max="5" list="tickmarks" onchange="updateTextInput(this.value);" value="2">
+     <input type="text" id="depth_val" value="2">
+    <datalist id="tickmarks" >
+  <option value="1" ></option>
+  <option value="2" ></option>
+  <option value="3" ></option>
+  <option value="4" ></option>
+  <option value="5" ></option>
+</datalist>  
+
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<a href="http://www.freepik.com">Designed by Aranjuezmedina / Freepik</a>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+function updateTextInput(val) {
+          document.getElementById('depth_val').value=val; 
+        }
+
+
+function tiles() {
+	var i,j,btn;
+	for (i = 1; i < 9; i++) {
+		for (j = 1; j < 9; j++) {
+			btn = document.createElement("IMG");
+			btn.style.top = 8 + 90*i + "px";
+			btn.style.left = 8 + 90*j + "px";
+			btn.style.height = "90px";
+			btn.style.width = "90px";
+			btn.style.zIndex = "0";
+			btn.style.position = "absolute";
+			btn.style.opacity = "0";
+			
+			btn.style.backgroundColor = "blue";
+			btn.classList.add( '' + i + j + "tile");
+    
+			document.body.appendChild(btn);
+			}
+		}
+}
+
+
+
+function Game(){
+	
+	
+
+	var b11 = document.getElementsByClassName('start_button')[0];
+	b11.parentNode.removeChild(b11);
+	
+	
+	
+	
+
+	b11 = document.getElementById('difficulty');
+	var difficulty = document.getElementById('depth_val').value;
+	//console.log(difficulty);
+	b11.parentNode.removeChild(b11);
+
+
+	//Make the DIV element draggagle:
+	//dragElement(document.getElementById("chess_piece"));
+	dragElement(document.getElementsByClassName("single_piece ped_b8")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_b7")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_b6")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_b5")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_b4")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_b3")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_b2")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_b1")[0]);
+
+/*	dragElement(document.getElementsByClassName("single_piece ped_n8")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_n7")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_n6")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_n5")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_n4")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_n3")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_n2")[0]);
+	dragElement(document.getElementsByClassName("single_piece ped_n1")[0]);
+*/
+
+	dragElement(document.getElementsByClassName("single_piece tor_b1")[0]);
+	dragElement(document.getElementsByClassName("single_piece cav_b1")[0]);
+	dragElement(document.getElementsByClassName("single_piece alf_b1")[0]);
+	dragElement(document.getElementsByClassName("single_piece reg_b")[0]);
+	dragElement(document.getElementsByClassName("single_piece re_b")[0]);
+	dragElement(document.getElementsByClassName("single_piece alf_b2")[0]);
+	dragElement(document.getElementsByClassName("single_piece cav_b2")[0]);
+	dragElement(document.getElementsByClassName("single_piece tor_b2")[0]);
+
+/*	dragElement(document.getElementsByClassName("single_piece tor_n1")[0]);
+	dragElement(document.getElementsByClassName("single_piece cav_n1")[0]);
+	dragElement(document.getElementsByClassName("single_piece alf_n1")[0]);
+	dragElement(document.getElementsByClassName("single_piece reg_n")[0]);
+	dragElement(document.getElementsByClassName("single_piece re_n")[0]);
+	dragElement(document.getElementsByClassName("single_piece alf_n2")[0]);
+	dragElement(document.getElementsByClassName("single_piece cav_n2")[0]);
+	dragElement(document.getElementsByClassName("single_piece tor_n2")[0]);
+*/
+
+
+	var board = [ 
+	  ["tn1","cn1","an1","rgn","rn","an2","cn2","tn2"],
+	  ["pn1","pn2","pn3","pn4","pn5","pn6","pn7","pn8"],
+	  [" "," "," "," "," "," "," "," "],
+	  [" "," "," "," "," "," "," "," "],
+	  [" "," "," "," "," "," "," "," "],
+	  [" "," "," "," "," "," "," "," "],
+	  ["pb1","pb2","pb3","pb4","pb5","pb6","pb7","pb8"],
+	  ["tb1","cb1","ab1","rb","rgb","ab2","cb2","tb2"] ];
+
+	
+	const setn = new Set(["tn1","cn1","an1","rgn","rn","an2","cn2","tn2","pn1","pn2","pn3","pn4","pn5","pn6","pn7","pn8"]);
+	const setb = new Set(["tb1","cb1","ab1","rgb","rb","ab2","cb2","tb2","pb1","pb2","pb3","pb4","pb5","pb6","pb7","pb8"]);
+	const rook = new Set(["tn1","tn2","tb1","tb2"]);
+	const knight = new Set(["cn1","cn2","cb1","cb2"]);
+	const bish = new Set(["an1","an2","ab1","ab2"]);
+	const king = new Set(["rn","rb"]);
+	const queen = new Set(["rgn","rgb"]);
+	const pawn = new Set(["pb1","pb2","pb3","pb4","pb5","pb6","pb7","pb8","pn1","pn2","pn3","pn4","pn5","pn6","pn7","pn8"]);
+
+//	console.log(board.join('\n'));
+
+	function eval_board(b){
+		var col;
+		var s = 0;
+		var i,j;
+		//positive for white, negative for black
+			for(i=0;i<8;i++){
+				for(j=0;j<8;j++){
+					
+					if(b[i][j]!= " "){
+					
+					col = piece_to_color(b[i][j]);
+					col = 2*col -1;
+					
+					if (rook.has(b[i][j])){
+						s = s + col*3;
+						}
+					if (knight.has(b[i][j])){
+						s = s + col*4;
+						}
+					if (bish.has(b[i][j])){
+						s = s + col*3;
+						}
+					if (king.has(b[i][j])){
+						s = s + col*100;
+						}
+					if (queen.has(b[i][j])){
+						s = s + col*10;
+						}
+					if (pawn.has(b[i][j])){
+						s = s + col;
+						}
+					}}
+				}
+		
+		return s;
+		}
+
+	function fake_board_after_move(bb,a,b,c,d){
+		
+		
+		
+		var fb =  JSON.parse(JSON.stringify(bb));
+		
+		//console.log(fb.join('\n'));
+		//console.log(fb[a-1][b-1]);
+		
+		fb[c-1][d-1] = fb[a-1][b-1];
+	    fb[a-1][b-1] = " ";
+		
+		//console.log(fb.join('\n'));
+		
+		return fb;
+		}
+
+	function possible_moves(b,color){
+		var moo = [];
+		var i,j,k,aux;
+		//console.log(b.join('\n'));
+		
+		for(i=0;i<8;i++){
+				for(j=0;j<8;j++){
+					
+					if(b[i][j]!= " "){
+						
+						if(piece_to_color(b[i][j]) == color){
+							
+							aux = valid_moves(b,i+1,j+1);
+							
+							for(k=0;k<aux.length;k++){
+								moo.push([i+1,j+1,aux[k][0],aux[k][1]]);
+								
+							}
+						}
+				
+					}
+				}
+			}
+		//console.log(moo.join('\n'));
+	
+		return moo;
+		}
+	
+
+	function best_move(b, depth, color){
+		var all_moves = possible_moves(b, color);  
+		var move, adv_move;
+		var i,j,fb,fb2;
+		var len = all_moves.length;
+		var max_val = -100000;
+		var val;
+		
+		if(depth == 1){
+			for(i=0;i<len;i++){
+				if( (color && b[all_moves[i][2]-1][all_moves[i][3]-1]=="rn") | (color==0 && b[all_moves[i][2]-1][all_moves[i][3]-1]=="rb")){
+					move =  all_moves[i];
+					max_val = 1000000;
+					break;
+					}
+			
+				//console.log(i,2);
+				fb = fake_board_after_move(b,all_moves[i][0],all_moves[i][1],all_moves[i][2],all_moves[i][3]);
+				val = (2*color-1)*eval_board(fb);
+				
+				if( (val>max_val) | ( val==max_val && Math.floor(Math.random() * 2) )   ){
+					max_val = val; 
+					move =  all_moves[i];
+					}
+				//console.log(i,2);
+			}
+			//console.log(max_val);
+			return {
+        a: move,
+        b: max_val,
+    }
+		}
+		
+		
+		if(depth > 1){
+			for(i=0;i<len;i++){
+				if( (color && b[all_moves[i][2]-1][all_moves[i][3]-1]=="rn") | (color==0 && b[all_moves[i][2]-1][all_moves[i][3]-1]=="rb")){
+					move =  all_moves[i];
+					max_val = 1000000;
+					break;
+					}
+					
+				//console.log(i);
+				fb = fake_board_after_move(b,all_moves[i][0],all_moves[i][1],all_moves[i][2],all_moves[i][3]);
+				adv_val = best_move(fb, depth-1, 1-color).b;
+				val = -adv_val;		
+				if( (val>max_val) | ( val==max_val && Math.floor(Math.random() * 2) )   ){
+					max_val = val; 
+					move =  all_moves[i];
+					}
+				//console.log(i);
+				}
+			
+			//console.log(max_val);
+			return {
+        a: move,
+        b: max_val,
+    }
+			}
+			
+		}
+
+	function dragElement(elmnt) {
+		  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0, xin = 0, yin = 0, tin = 0, lin = 0, tilex = 0, tiley = 0;
+		  var arr = [];
+		  var len = 0;
+		  var tile, tile2, elem;
+		  if (document.getElementById(elmnt.id + "header")) {
+		   /* if present, the header is where you move the DIV from:*/
+			document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+		  } else {  
+			/* otherwise, move the DIV from anywhere inside the DIV:*/
+			elmnt.onmousedown = dragMouseDown;
+		  }
+
+		  function dragMouseDown(e) {
+				var  i;
+			  
+				e = e || window.event;
+				e.preventDefault();
+				// get the mouse cursor position at startup:
+				tin = elmnt.offsetTop;
+				lin = elmnt.offsetLeft;
+				xin = e.clientX;
+				yin = e.clientY;
+				
+				tilex = lin / 90;
+				tiley = tin / 90;
+				
+				tile = document.getElementsByClassName('' + tiley + tilex + "tile")[0];
+				tile.style.opacity = ".4";
+				
+				pos3 = e.clientX;
+				pos4 = e.clientY;
+				
+				arr = valid_moves(board,tiley,tilex);
+				
+				len = arr.length;
+				for (i=0; i<len; i++){
+					tile2 = document.getElementsByClassName('' + arr[i][0] + arr[i][1] + "tile")[0];
+					tile2.style.opacity = ".4";
+					}
+				
+				
+				
+				//console.log(valid_moves(tiley,tilex));
+				
+				document.onmouseup = closeDragElement;
+				// call a function whenever the cursor moves:
+				document.onmousemove = elementDrag;
+		  }
+
+		  function elementDrag(e) {
+				e = e || window.event;
+				e.preventDefault();
+				// calculate the new cursor position:
+				pos1 = pos3 - e.clientX;
+				pos2 = pos4 - e.clientY;
+				pos3 = e.clientX;
+				pos4 = e.clientY;
+				// set the element's new position:
+				elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+				elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+		  }
+
+		  function closeDragElement(e) {
+			  var i,j;
+				pos3 = e.clientX - xin;
+				pos4 = e.clientY - yin;
+				
+				pos1 = 90 * Math.round( pos3/90 ) ;
+				pos2 = 90 * Math.round( pos4/90 ) ;
+				
+				elmnt.style.top = (tin + pos2) + "px";
+				elmnt.style.left = (lin + pos1) + "px";
+				
+				var tilex2 = (lin + pos1) / 90;
+				var tiley2 = (tin + pos2) / 90;
+				 
+				 
+				
+				if ((elmnt.offsetTop < 90) | (elmnt.offsetTop > 720) |  (elmnt.offsetLeft < 90) | (elmnt.offsetLeft > 720) | (the_move_is_inside(tiley2,tilex2,arr)==0)){
+					elmnt.style.top = tin  + "px";
+					elmnt.style.left = lin + "px";
+					tilex2 = tilex;
+					tiley2 = tiley;
+					}
+					
+				
+				if((tilex2*9 + tiley2 != tilex*9 + tiley) && board[tiley2-1][tilex2-1] != " "){
+					elem = pos_to_el(tiley2,tilex2);
+					
+				//	console.log(board[tiley2-1][tilex2-1]);
+					
+					elem.style.opacity = 0;
+					elem.style.zIndex = -1;
+					}
+				
+				if(tilex2*9 + tiley2 != tilex*9 + tiley){
+					
+					
+					if( board[tiley2-1][tilex2-1] =="rn"){
+					b11 = document.getElementById('YW');
+					b11.style.opacity = "1";
+					}
+				
+				board[tiley2-1][tilex2-1] = board[tiley-1][tilex-1];
+				board[tiley-1][tilex-1] = " ";
+				
+			//	console.log(board.join('\n'));
+
+				}
+				
+				//console.log(first_piece_on_left(tiley2,tilex2) + ". This is in the move function.");
+				  
+				/* stop moving when mouse button is released:*/
+				document.onmouseup = null;
+				document.onmousemove = null;
+				tile.style.opacity = "0";
+				
+				for (i=0; i<len; i++){
+					tile2 = document.getElementsByClassName('' + arr[i][0] + arr[i][1] + "tile")[0];
+					tile2.style.opacity = "0";
+					}
+				
+				
+				if(tilex2*9 + tiley2 != tilex*9 + tiley){
+				var moo = best_move(board,difficulty,0).a;
+				//console.log(board.join('\n'));
+				//console.log(moo);
+				
+				var el = pos_to_el(moo[0],moo[1]);
+				
+				if(board[moo[2]-1][moo[3]-1]!= " "){
+				var el2 = pos_to_el(moo[2],moo[3]);
+				    el2.style.opacity = 0;
+					el2.style.zIndex = -1;
+				}
+				//console.log(el);
+				
+				el.style.top = moo[2]*90  + "px";
+				el.style.left = moo[3]*90 + "px";
+				
+				if( board[moo[2]-1][moo[3]-1] =="rb"){
+					b11 = document.getElementById('GO');
+					b11.style.opacity = "1";
+					}
+				
+				board[moo[2]-1][moo[3]-1] = board[moo[0]-1][moo[1]-1];
+				board[moo[0]-1][moo[1]-1] = " ";
+				
+				
+				
+				
+				//to complete
+				
+			}
+				
+				
+		  }
+	}
+
+
+	function the_move_is_inside(a,b,arr){
+		var i,j;
+		var len = arr.length;
+		for (i=0;i<len;i++){
+			if(arr[i][0] == a && arr[i][1]==b){
+				return 1;
+				}
+			}
+		return 0;
+		}
+
+	function pos_to_el(a,b){
+		  var elem;
+			
+		  var s = board[a-1][b-1];
+			
+			switch(s){
+		  case "tn1":
+			elem = document.getElementsByClassName("single_piece tor_n1")[0];
+			break;
+		  case "cn1":
+			elem = document.getElementsByClassName("single_piece cav_n1")[0];
+			break;
+		  case "an1":
+			elem = document.getElementsByClassName("single_piece alf_n1")[0];
+			break;
+		  case "rgn":
+			elem = document.getElementsByClassName("single_piece reg_n")[0];
+			break;  
+		  case "rn":
+			elem = document.getElementsByClassName("single_piece re_n")[0];
+			break;
+		  case "an2":
+			elem = document.getElementsByClassName("single_piece alf_n2")[0];
+			break;
+		  case "cn2":
+			elem = document.getElementsByClassName("single_piece cav_n2")[0];
+			break;
+		  case "tn2":
+			elem = document.getElementsByClassName("single_piece tor_n2")[0];
+			break; 
+				
+		  case "pn1":
+			elem = document.getElementsByClassName("single_piece ped_n1")[0];
+			break;
+		  case "pn2":
+			elem = document.getElementsByClassName("single_piece ped_n2")[0];
+			break;
+		  case "pn3":
+			elem = document.getElementsByClassName("single_piece ped_n3")[0];
+			break;
+		  case "pn4":
+			elem = document.getElementsByClassName("single_piece ped_n4")[0];
+			break;
+		  case "pn5":
+			elem = document.getElementsByClassName("single_piece ped_n5")[0];
+			break;
+		  case "pn6":
+			elem = document.getElementsByClassName("single_piece ped_n6")[0];
+			break;
+		  case "pn7":
+			elem = document.getElementsByClassName("single_piece ped_n7")[0];
+			break;
+		  case "pn8":
+			elem = document.getElementsByClassName("single_piece ped_n8")[0];
+			break;
+		 
+		  case "tb1":
+			elem = document.getElementsByClassName("single_piece tor_b1")[0];
+			break;
+		  case "cb1":
+			elem = document.getElementsByClassName("single_piece cav_b1")[0];
+			break;
+		  case "ab1":
+			elem = document.getElementsByClassName("single_piece alf_b1")[0];
+			break;
+		  case "rgb":
+			elem = document.getElementsByClassName("single_piece reg_b")[0];
+			break;  
+		  case "rb":
+			elem = document.getElementsByClassName("single_piece re_b")[0];
+			break;
+		  case "ab2":
+			elem = document.getElementsByClassName("single_piece alf_b2")[0];
+			break;
+		  case "cb2":
+			elem = document.getElementsByClassName("single_piece cav_b2")[0];
+			break;
+		  case "tb2":
+			elem = document.getElementsByClassName("single_piece tor_b2")[0];
+			break; 
+				
+		  case "pb1":
+			elem = document.getElementsByClassName("single_piece ped_b1")[0];
+			break;
+		  case "pb2":
+			elem = document.getElementsByClassName("single_piece ped_b2")[0];
+			break;
+		  case "pb3":
+			elem = document.getElementsByClassName("single_piece ped_b3")[0];
+			break;
+		  case "pb4":
+			elem = document.getElementsByClassName("single_piece ped_b4")[0];
+			break;
+		  case "pb5":
+			elem = document.getElementsByClassName("single_piece ped_b5")[0];
+			break;
+		  case "pb6":
+			elem = document.getElementsByClassName("single_piece ped_b6")[0];
+			break;
+		  case "pb7":
+			elem = document.getElementsByClassName("single_piece ped_b7")[0];
+			break;
+		  case "pb8":
+			elem = document.getElementsByClassName("single_piece ped_b8")[0];
+			break;
+
+			}
+		
+		
+		
+		  return elem;
+	}
+
+
+	function first_piece_on_left(bb,a,b){
+
+		var i,j;
+		var s = bb[a-1][b-1];
+		
+		if (s == " "){
+			console.log("Error. An empty cell has been passed to the function first_piece_on_left. Idiot");		
+			return " ";	
+			}
+			
+		
+		
+		if(setb.has(s)){
+			for (i = b-2; 1==1; i--){
+				if(i<0){
+					i = 8+i;
+					}
+				if(bb[a-1][i]!=" "){
+					return bb[a-1][i];
+					break;
+					}
+				if(i==b-1){
+					console.log("Error. first_piece_on_left cannot find a nonempty cell. Idiot");
+					}
+				}		 		
+			} else {
+				for (i = b; 1==1; i++){
+					if(i>7){
+						i = i-8;
+						}
+					if(bb[a-1][i]!=" "){
+						return bb[a-1][i];
+						break;
+						}
+					}
+				if(i==b-1){
+						console.log("Error. first_piece_on_left cannot find a nonempty cell. Idiot");
+					}
+			}
+		
+		}
+		
+	function valid_moves(bb,a,b){
+		
+		/*
+		var arr = [];
+		for(var i=1; i<=mynumber; i++) {
+			arr.push(i.toString());
+		}
+		arr.length;
+		*/
+		
+		
+		
+		var s = first_piece_on_left(bb,a,b);
+//		console.log([i,j,4]);
+
+		
+		if (s == " "){
+			console.log("Error. An empty cell has been passed to the function valid_moves. Idiot");		
+			return " ";	
+			}
+		var color = piece_to_color(bb[a-1][b-1]);
+			
+		if (rook.has(s)){
+			return valid_moves_r(bb,a,b,color);
+			}
+		if (knight.has(s)){
+			return valid_moves_c(bb,a,b,color);
+			}
+		if (bish.has(s)){
+			return valid_moves_b(bb,a,b,color);
+			}
+		if (king.has(s)){
+			return valid_moves_k(bb,a,b,color);
+			}
+		if (queen.has(s)){
+			return valid_moves_q(bb,a,b,color);
+			}
+		if (pawn.has(s)){
+			return valid_moves_p(bb,a,b,color);
+			}
+		}
+			
+	function piece_to_color(str){
+		if (str == " "){
+			
+			console.log("Error. An empty cell has been passed to the function piece_to_color. Idiot");
+			
+			return " ";	
+			}
+		var color;
+		if (setb.has(str)) { color = 1;} else {color = 0;}
+		return color;
+		}	
+		
+	function inbound(a,b){
+		
+		if( (a<9) && (a>0) && (b<9) && (b>0) ){
+			return 1;
+			} else {
+				return 0;
+				}
+		
+		}
+	
+	function valid_moves_aux(bb,a,b,color){
+		
+		var col2;
+		
+		if(inbound(a,b)){
+			if( bb[a-1][b-1] == " " ){	
+				return 1;
+			} else {
+				col2 = piece_to_color(bb[a-1][b-1]);			
+				if (col2 != color){
+					return 1;
+					} 
+			}
+		}
+		
+		return 0;
+		
+	}
+	
+	function valid_moves_r(bb,a,b,color){
+		var arr = [];
+		/*
+			for(var i=1; i<=mynumber; i++) {
+				arr.push(i.toString());
+			}
+			*/
+			
+		
+		var i,j,col2;
+		
+		for (i = b-2; i>-1; i--){
+			if( bb[a-1][i] == " " ){	
+				arr.push([a,i+1]);
+			} else {
+				col2 = piece_to_color(bb[a-1][i]);			
+				if (col2 != color){
+					arr.push([a,i+1]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = b; i<8; i++){
+			if( bb[a-1][i] == " " ){	
+				arr.push([a,i+1]);
+			} else {
+				col2 = piece_to_color(bb[a-1][i]);			
+				if (col2 != color){
+					arr.push([a,i+1]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = a-2; i>-1; i--){
+			if( bb[i][b-1] == " " ){	
+				arr.push([i+1,b]);
+			} else {
+				col2 = piece_to_color(bb[i][b-1]);			
+				if (col2 != color){
+					arr.push([i+1,b]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = a; i<8; i++){
+			if( bb[i][b-1] == " " ){	
+				arr.push([i+1,b]);
+			} else {
+				col2 = piece_to_color(bb[i][b-1]);			
+				if (col2 != color){
+					arr.push([i+1,b]);
+					} 
+				break;
+			}
+		}
+		
+		return arr;
+		}
+
+	function valid_moves_c(bb,a,b,color){
+		var arr = [];
+		/*
+			for(var i=1; i<=mynumber; i++) {
+				arr.push(i.toString());
+			}
+			*/
+		
+		
+		if(valid_moves_aux(bb,a+1,b+2,color)){
+			arr.push([a+1,b+2]);
+		}
+		if(valid_moves_aux(bb,a-1,b+2,color)){
+			arr.push([a-1,b+2]);
+		}
+		if(valid_moves_aux(bb,a+1,b-2,color)){
+			arr.push([a+1,b-2]);
+		}
+		if(valid_moves_aux(bb,a-1,b-2,color)){
+			arr.push([a-1,b-2]);
+		}
+		if(valid_moves_aux(bb,a+2,b+1,color)){
+			arr.push([a+2,b+1]);
+		}
+		if(valid_moves_aux(bb,a-2,b+1,color)){
+			arr.push([a-2,b+1]);
+		}
+		if(valid_moves_aux(bb,a+2,b-1,color)){
+			arr.push([a+2,b-1]);
+		}
+		if(valid_moves_aux(bb,a-2,b-1,color)){
+			arr.push([a-2,b-1]);
+		}
+		
+		
+		
+		
+		return arr;
+		}
+		
+	function valid_moves_b(bb,a,b,color){
+		var arr = [];
+		/*
+			for(var i=1; i<=mynumber; i++) {
+				arr.push(i.toString());
+			}
+			*/
+			
+				
+		
+		var col2,i,j;
+		
+		for (i = 1; inbound(a+i,b+i); i++){
+			if( bb[a-1+i][b-1+i] == " " ){	
+				arr.push([a+i,b+i]);
+			} else {
+				col2 = piece_to_color(bb[a-1+i][b-1+i]);			
+				if (col2 != color){
+					arr.push([a+i,b+i]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = 1; inbound(a+i,b-i); i++){
+			if( bb[a-1+i][b-1-i] == " " ){	
+				arr.push([a+i,b-i]);
+			} else {
+				col2 = piece_to_color(bb[a-1+i][b-1-i]);			
+				if (col2 != color){
+					arr.push([a+i,b-i]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = 1; inbound(a-i,b+i); i++){
+			if( bb[a-1-i][b-1+i] == " " ){	
+				arr.push([a-i,b+i]);
+			} else {
+				col2 = piece_to_color(bb[a-1-i][b-1+i]);			
+				if (col2 != color){
+					arr.push([a-i,b+i]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = 1; inbound(a-i,b-i); i++){
+			if( bb[a-1-i][b-1-i] == " " ){	
+				arr.push([a-i,b-i]);
+			} else {
+				col2 = piece_to_color(bb[a-1-i][b-1-i]);			
+				if (col2 != color){
+					arr.push([a-i,b-i]);
+					} 
+				break;
+			}
+		}
+		
+		
+		return arr;
+		}
+
+	function valid_moves_k(bb,a,b,color){
+		var arr = [];
+		/*
+			for(var i=1; i<=mynumber; i++) {
+				arr.push(i.toString());
+			}
+			*/
+			
+		
+		if(valid_moves_aux(bb,a+1,b+1,color)){
+			arr.push([a+1,b+1]);
+		}
+		if(valid_moves_aux(bb,a+1,b,color)){
+			arr.push([a+1,b]);
+		}
+		if(valid_moves_aux(bb,a+1,b-1,color)){
+			arr.push([a+1,b-1]);
+		}
+		if(valid_moves_aux(bb,a,b-1,color)){
+			arr.push([a,b-1]);
+		}
+		if(valid_moves_aux(bb,a-1,b-1,color)){
+			arr.push([a-1,b-1]);
+		}
+		if(valid_moves_aux(bb,a-1,b,color)){
+			arr.push([a-1,b]);
+		}
+		if(valid_moves_aux(bb,a-1,b+1,color)){
+			arr.push([a-1,b+1]);
+		}
+		if(valid_moves_aux(bb,a,b+1,color)){
+			arr.push([a,b+1]);
+		}	
+		
+		
+		return arr;
+		}
+		
+	function valid_moves_q(bb,a,b,color){
+		var arr = [];
+		/*
+			for(var i=1; i<=mynumber; i++) {
+				arr.push(i.toString());
+			}
+			*/
+		var col2,i,j;
+		
+		for (i = b-2; i>-1; i--){
+			if( bb[a-1][i] == " " ){	
+				arr.push([a,i+1]);
+			} else {
+				col2 = piece_to_color(bb[a-1][i]);			
+				if (col2 != color){
+					arr.push([a,i+1]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = b; i<8; i++){
+			if( bb[a-1][i] == " " ){	
+				arr.push([a,i+1]);
+			} else {
+				col2 = piece_to_color(bb[a-1][i]);			
+				if (col2 != color){
+					arr.push([a,i+1]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = a-2; i>-1; i--){
+			if( bb[i][b-1] == " " ){	
+				arr.push([i+1,b]);
+			} else {
+				col2 = piece_to_color(bb[i][b-1]);			
+				if (col2 != color){
+					arr.push([i+1,b]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = a; i<8; i++){
+			if( bb[i][b-1] == " " ){	
+				arr.push([i+1,b]);
+			} else {
+				col2 = piece_to_color(bb[i][b-1]);			
+				if (col2 != color){
+					arr.push([i+1,b]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = 1; inbound(a+i,b+i); i++){
+			if( bb[a-1+i][b-1+i] == " " ){	
+				arr.push([a+i,b+i]);
+			} else {
+				col2 = piece_to_color(bb[a-1+i][b-1+i]);			
+				if (col2 != color){
+					arr.push([a+i,b+i]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = 1; inbound(a+i,b-i); i++){
+			if( bb[a-1+i][b-1-i] == " " ){	
+				arr.push([a+i,b-i]);
+			} else {
+				col2 = piece_to_color(bb[a-1+i][b-1-i]);			
+				if (col2 != color){
+					arr.push([a+i,b-i]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = 1; inbound(a-i,b+i); i++){
+			if( bb[a-1-i][b-1+i] == " " ){	
+				arr.push([a-i,b+i]);
+			} else {
+				col2 = piece_to_color(bb[a-1-i][b-1+i]);			
+				if (col2 != color){
+					arr.push([a-i,b+i]);
+					} 
+				break;
+			}
+		}
+		
+		for (i = 1; inbound(a-i,b-i); i++){
+			if( bb[a-1-i][b-1-i] == " " ){	
+				arr.push([a-i,b-i]);
+			} else {
+				col2 = piece_to_color(bb[a-1-i][b-1-i]);			
+				if (col2 != color){
+					arr.push([a-i,b-i]);
+					} 
+				break;
+			}
+		}
+		
+		
+		
+		
+		
+		return arr;
+		}
+
+	function valid_moves_p(bb,a,b,color){
+		var arr = [];
+		/*
+			for(var i=1; i<=mynumber; i++) {
+				arr.push(i.toString());
+			}
+			*/
+			
+		var mov = color*2 - 1;	
+		
+		
+		if((0<a-mov) && (a-mov<9)){
+			if(bb[a-mov-1][b-1]==" "){
+					arr.push([a-mov,b]);
+				}
+			}
+		
+		
+						
+		
+		if(valid_moves_aux(bb,a-mov,b+1,color)){
+			if( bb[a-mov-1][b] != " " ){
+			arr.push([a-mov,b+1]);}
+		}
+		if(valid_moves_aux(bb,a-mov,b-1,color)){
+			if( bb[a-mov-1][b-2] != " " ){
+			arr.push([a-mov,b-1]);}
+		}
+		
+		
+		return arr;
+		}
+
+		
+		
+		
+}
+
+
+
+</script>
+
+</body>
+</html>
+
