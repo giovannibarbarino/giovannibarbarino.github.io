@@ -474,8 +474,18 @@
 			<li>
 				<div style="display:block; cursor:pointer"
 				onclick="
+				document.getElementById('art').style.display='none';
+				document.getElementById('con').style.display='none';
+				document.getElementById('int').style.display='block';
+				return false;">
+				<h3>Interessi</h3></div>
+			</li>
+			<li>
+				<div style="display:block; cursor:pointer"
+				onclick="
 				document.getElementById('con').style.display='none';
 				document.getElementById('art').style.display='block';
+				document.getElementById('int').style.display='none';
 				return false;">
 				<h3>Articoli</h3></div>
 			</li>
@@ -484,6 +494,7 @@
 				onclick="
 				document.getElementById('art').style.display='none';
 				document.getElementById('con').style.display='block';
+				document.getElementById('int').style.display='none';
 				return false;">
 				<h3>Seminari</h3></div>
 			</li>
@@ -495,14 +506,23 @@
 	<mmenu id="ricerca-mmenu">
 		<div style="text-align: center; width:49%; display: inline-block; cursor:pointer"
 				onclick="
+				document.getElementById('art').style.display='none';
+				document.getElementById('con').style.display='none';
+				document.getElementById('int').style.display='block';
+				return false;">
+				<h3>Interessi</h3></div>
+		<div style="text-align: center; width:49%; display: inline-block; cursor:pointer"
+				onclick="
 				document.getElementById('con').style.display='none';
 				document.getElementById('art').style.display='block';
+				document.getElementById('int').style.display='none';
 				return false;">
 				<h3>Articoli</h3></div>
-				<div style="text-align: center; width:49%; display: inline-block; cursor:pointer"
+		<div style="text-align: center; width:49%; display: inline-block; cursor:pointer"
 				onclick="
 				document.getElementById('art').style.display='none';
 				document.getElementById('con').style.display='block';
+				document.getElementById('int').style.display='none';
 				return false;">
 				<h3>Seminari</h3></div>
 	</mmenu>
@@ -513,7 +533,9 @@
 		<a href="index.html#research"><img src="images/en.png" alt="ENG"  width="30" height="30" style="vertical-align:middle"></a>
 	</div>
 	<h2 class="major">Ricerca</h2>
-	<span class="image main"><img src="images/res.jpg" alt="" /></span>
+	
+	<div id="int" class="app2" >  
+	<span class="image main"><img src="images/res.jpg"  alt="" /></span>
 	<p>
 	I miei interessi principali sono l'analisi spettrale asintotica di matrici e le decomposizioni di rango basso.
 	Ho lavorato in vari ambiti, quali sequenze di matrici derivate dalla discretizzazione di PDE lineari,
@@ -528,6 +550,8 @@
 	Sostenuto dal consolidator ERC grant no 101085607 dell'Unione Europea  (Set 2023 - Giu 2026)<br>
 	Progetto: <i>Beyond Low-Rank Factorizations (eLinoR)</i>
 	</p>
+	</div>
+	
 		<div id="art" class="app" >  
 			<h3 class="res">Articoli, Preprint e Note:</h3>
 			<ul class="art">
@@ -834,7 +858,7 @@
 			</ul>
 		</div>
 		<div id="con" class="app" >  
-			<h3 class="res">Conferenze, Scuole Estive e Seminari</h3>
+			<h3 class="res">Conferenze, Scuole Estive e Seminari:</h3>
 			<ul class="art">
 				
 <li>Progetto “Circular Economy from the Mathematics for Signal Processing prospective” (Dic 2024 - L'Aquila)<br>

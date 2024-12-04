@@ -283,7 +283,7 @@
 
 
 	<!-- Didactics -->
-	<article id="dida"  >
+	<article id="dida">
 		<div class="LL">
 			<a href="index-ita.html#dida"><img src="images/it.png" alt="ITA"  width="30" height="30" style="vertical-align:middle"></a> - 
 			<img src="images/en.png" alt="ENG"  width="30" height="30" style="vertical-align:middle">
@@ -488,8 +488,18 @@
 			<li>
 				<div style="display:block; cursor:pointer"
 				onclick="
+				document.getElementById('art').style.display='none';
+				document.getElementById('con').style.display='none';
+				document.getElementById('int').style.display='block';
+				return false;">
+				<h3>Interests</h3></div>
+			</li>
+			<li>
+				<div style="display:block; cursor:pointer"
+				onclick="
 				document.getElementById('con').style.display='none';
 				document.getElementById('art').style.display='block';
+				document.getElementById('int').style.display='none';
 				return false;">
 				<h3>Articles</h3></div>
 			</li>
@@ -498,6 +508,7 @@
 				onclick="
 				document.getElementById('art').style.display='none';
 				document.getElementById('con').style.display='block';
+				document.getElementById('int').style.display='none';
 				return false;">
 				<h3>Conferences</h3></div>
 			</li>
@@ -510,14 +521,23 @@
 	<mmenu id="research-mmenu" >
 		<div style="text-align: center; width:49%; display: inline-block; cursor:pointer"
 				onclick="
+				document.getElementById('art').style.display='none';
+				document.getElementById('con').style.display='none';
+				document.getElementById('int').style.display='block';
+				return false;">
+				<h3>Interests</h3></div>
+		<div style="text-align: center; width:49%; display: inline-block; cursor:pointer"
+				onclick="
 				document.getElementById('con').style.display='none';
 				document.getElementById('art').style.display='block';
+				document.getElementById('int').style.display='none';
 				return false;">
 				<h3>Articles</h3></div>
-				<div style="text-align: center; width:49%; display: inline-block; cursor:pointer"
+		<div style="text-align: center; width:49%; display: inline-block; cursor:pointer"
 				onclick="
 				document.getElementById('art').style.display='none';
 				document.getElementById('con').style.display='block';
+				document.getElementById('int').style.display='none';
 				return false;">
 				<h3>Conferences</h3></div>
 	</mmenu>
@@ -532,6 +552,7 @@
 			<img src="images/en.png" alt="ENG"  width="30" height="30" style="vertical-align:middle">
 		</div>
 		<h2 class="major">Research</h2>
+		<div id="int" class="app2" > 
 		<span class="image main"><img src="images/res.jpg" alt="" /></span>
 		<p>
 			My main interests are the asymptotic spectral analysis of matrices and the low-rank factorization of matrices. 
@@ -546,6 +567,7 @@
 			Supported by the ERC consolidator grant no 101085607 of the European Union  (Sep 2023 - Jun 2026)<br>
 			Project: <i>Beyond Low-Rank Factorizations (eLinoR)</i>
 		</p>
+		</div>
 		<div id="art" class="app" >  
 			<h3 class="res">Articles, Preprints and Notes:</h3>
 			<ul class="art">
