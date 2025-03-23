@@ -20,6 +20,10 @@
         white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
         overflow-wrap: break-word;
     }
+    
+    img {
+		height: 100%;    
+    }
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
@@ -224,7 +228,7 @@
 			padding-bottom: 0.5rem;
 			margin: auto;
 		    text-align: center;
-		    margin-top:-3rem;
+		    margin-top:-4%;
 		}
 		
 
@@ -1204,6 +1208,7 @@
 		width: 100%;
 		padding: 4rem 2rem;
 		z-index: 3;
+		padding-top: 0px;
 	}
 
 		#wrapper:before {
@@ -1215,6 +1220,7 @@
 
 			#wrapper {
 				padding: 3rem 2rem;
+				padding-top: 0px;
 			}
 
 		}
@@ -1223,6 +1229,7 @@
 
 			#wrapper {
 				padding: 2rem 1rem;
+				padding-top: 0px;
 			}
 
 		}
@@ -1231,6 +1238,7 @@
 
 			#wrapper {
 				padding: 1rem;
+				padding-top: 0px;
 			}
 
 		}
@@ -1343,6 +1351,8 @@
 			border-bottom-width: 1px;
 			max-width: 100%;
 		}
+		
+		
 		
 
 
@@ -1583,7 +1593,7 @@
 		 
 			/*max-width: 60%;*/
 			background-color: rgba(27, 31, 34, 0.85);
-			top: -2rem;
+			/*top: -2rem;*/
 			border-radius: 4px;
 			opacity: 0;
 		}
@@ -1693,7 +1703,7 @@
 				position: absolute;
 				top: 0rem;
 				left: 0rem;
-				height: 4rem;
+				height: 2rem;
 				width: 6rem;
 				text-indent: 1.75rem;
                 white-space: nowrap;
@@ -1848,7 +1858,7 @@
  * Mobile version
  * */
 
-		@media screen and (max-width: 360px) {
+		@media screen and (max-width: 630px) {
 		
 		
 		#main article {
@@ -1863,11 +1873,13 @@
            
 			#main article .LL {
 				text-indent: 1rem;
+				height: 2rem;
+				width: 3rem;
 			}
 
 
 		h2.major {
-		    margin-top:-2rem;
+		    margin-top:-7%;
 		}
 		
 		
@@ -1970,12 +1982,44 @@
 		
 		
 		
+		/*
+		
+		.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
 		
 		
-		
-		
-		
-		
+		*/
 		
 		
 		
