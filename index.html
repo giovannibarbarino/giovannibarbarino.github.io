@@ -499,15 +499,17 @@
 				document.getElementById('art').style.display='none';
 				document.getElementById('con').style.display='none';
 				document.getElementById('int').style.display='block';
+				document.getElementById('pre').style.display='none';
 				return false;">
 				<h3>Interests</h3></div>
 			</li>
 			<li>
 				<div style="display:block; cursor:pointer"
 				onclick="
-				document.getElementById('con').style.display='none';
 				document.getElementById('art').style.display='block';
+				document.getElementById('con').style.display='none';
 				document.getElementById('int').style.display='none';
+				document.getElementById('pre').style.display='none';
 				return false;">
 				<h3>Articles</h3></div>
 			</li>
@@ -517,8 +519,19 @@
 				document.getElementById('art').style.display='none';
 				document.getElementById('con').style.display='block';
 				document.getElementById('int').style.display='none';
+				document.getElementById('pre').style.display='none';
 				return false;">
 				<h3>Conferences</h3></div>
+			</li>
+			<li>
+				<div style="display:block; cursor:pointer"
+				onclick="
+				document.getElementById('art').style.display='none';
+				document.getElementById('con').style.display='none';
+				document.getElementById('int').style.display='none';
+				document.getElementById('pre').style.display='block';
+				return false;">
+				<h3>Preprints</h3></div>
 			</li>
 		</ul>
 	</menu>
@@ -532,6 +545,7 @@
 				document.getElementById('art').style.display='none';
 				document.getElementById('con').style.display='none';
 				document.getElementById('int').style.display='block';
+				document.getElementById('pre').style.display='none';
 				return false;">
 				<h3>Interests</h3></div>
 		<div style="text-align: center; width:49%; display: inline-block; cursor:pointer"
@@ -539,13 +553,15 @@
 				document.getElementById('con').style.display='none';
 				document.getElementById('art').style.display='block';
 				document.getElementById('int').style.display='none';
+				document.getElementById('pre').style.display='none';
 				return false;">
 				<h3>Articles</h3></div>
 		<div style="text-align: center; width:49%; display: inline-block; cursor:pointer"
 				onclick="
 				document.getElementById('art').style.display='none';
-				document.getElementById('con').style.display='block';
+				document.getElementById('con').style.display='none';
 				document.getElementById('int').style.display='none';
+				document.getElementById('pre').style.display='block';
 				return false;">
 				<h3>Conferences</h3></div>
 	</mmenu>
@@ -584,29 +600,13 @@
 			Project: <i>Beyond Low-Rank Factorizations (eLinoR)</i>
 		</p>
 		</div>
-		<div id="art" class="app" >  
-			<h3 class="res">Articles, Preprints and Notes:</h3>
+		
+		
+		<div id="pre" class="app" >  
+			<h3 class="res">Preprints and Notes:</h3>
 			<ul class="art">
 				
-				
-					<li>
-				Barbarino G., Cavassi R.,
-				<a href="http://people.disim.univaq.it/~antonio.cicone/">Cicone A.</a>
-				<br>
-				<a href="https://doi.org/10.1016/j.laa.2024.06.002"><i>  Extension and convergence analysis of Iterative Filtering to spherical data</i></a><br>
-				Linear Algebra and its Applications 721, Pages 542-576  (Sep 2025) - <a href="https://arxiv.org/abs/2311.18657"> PDF </a>
-				</li>		
-				
-				
-				<li>
-				Barbarino G., 
-				<br>
-				<a href="https://doi.org/10.1016/j.laa.2024.03.027"><i>
-				On the Periodicity of Singular Vectors and the Holomorphic Block-Circulant SVD on the Unit Circumference</i></a>
-				<br>
-				Linear Algebra and its Applications 721, pp. 465-483 (Sep 2025) - <a href="https://arxiv.org/abs/2312.00707"> PDF </a>
-				</li>
-				
+								
 				<li>
 				Barbarino G., <a href="https://sites.google.com/site/nicolasgillis"> Gillis N.</a>,
 				<a href="https://www.subhayansahatcs.com/"> Subhayan S.</a>
@@ -626,19 +626,6 @@
 				Arxiv (Apr 2025)
 				</li>
 				
-				
-				<li>
-				Barbarino G., 
-				<a href="https://www.2pi.se/">Ekström S.-E.</a>,
-				<a href="https://www.mat.uniroma2.it/~garoni/">Garoni C.</a>,
-				<a href="https://www.linkedin.com/in/david-meadon-993129a6/?originalSubdomain=se">Meadon D.</a>,
-				<a href="http://scienze-como.uninsubria.it/serra/">Serra-Capizzano S.</a>,
-				<a href="https://www.aueb.gr/en/faculty_page/vassalos-paraskevas">Vassalos P.</a><br>
-				<a href="https://www.sciencedirect.com/science/article/pii/S0096300325001353"><i>
-				Spectral properties of flipped Toeplitz matrices and computational applications</i></a>
-				<br>
-				Applied Mathematics and Computation (Mar 2025).
-				</li>
 				
 				
 				<li>
@@ -669,20 +656,6 @@
 				</li>
 				
 				
-				
-				<li>
-				Barbarino G., 
-				<a href="https://www.researchgate.net/profile/Melker_Claesson">Claesson M.</a>, 
-				<a href="https://www.2pi.se/">Ekström S.-E.</a>,
-				<a href="https://www.mat.uniroma2.it/~garoni/">Garoni C.</a>, 
-				<a href="https://www.linkedin.com/in/david-meadon-993129a6/?originalSubdomain=se">Meadon D.</a>,
-				<a href="https://www.mat.uniroma2.it/~speleers/">Speleers H.</a><br>
-				<a href="https://link.springer.com/article/10.1007/s10543-024-01041-w"><i> 
-				Matrix-less spectral approximation for large structured matrices</i></a><br>
-				Bit Numer Math 65, 2 (Mar 2025)
-				</li>
-				
-				
 				<li>
 				Barbarino G., 
 				<a href="https://www.2pi.se/">Ekström S.-E.</a>,
@@ -707,12 +680,6 @@
 				Arxiv (Feb 2025)
 				</li>
 				
-				<li>
-				Barbarino G., <a href="https://www.mat.uniroma2.it/~garoni/">Garoni C.</a><br>
-				<a href="https://journals.uwyo.edu/index.php/ela/article/view/8929"><i>GLT sequences and normal matrices</i></a><br>
-				 The Electronic Journal of Linear Algebra  41, pp. 1-20 (Jan 2025)
-				</li>
-				
 				
 				
 				<li>
@@ -730,6 +697,119 @@
 				Ergodic Estimations for Toeplitz Sequences Generated by a Symbol</i></a><br>
 				Arxiv (Dec 2024).
 				</li>
+				
+				<li>
+				Barbarino G., 
+				<a href="https://www.2pi.se/">Ekström S.-E.</a>,
+				<a href="http://scienze-como.uninsubria.it/serra/">Serra-Capizzano S.</a>,
+				<a href="https://www.aueb.gr/en/faculty_page/vassalos-paraskevas">Vassalos P.</a>
+				<br>
+				<a href="https://arxiv.org/abs/2203.06992"><i> 
+				Theoretical results for eigenvalues, singular values, and eigenvectors of (flipped) Toeplitz matrices and related computational proposals</i></a><br>
+				 Arxiv (Jul 2022).
+				</li>
+				
+				<li>
+				Barbarino G.<br>
+				<a href="http://arxiv.org/abs/1807.06528"><i>Notes on asymptotic eigenvalues distribution on complex circles</i></a><br>
+				Arxiv (2018)
+				</li>
+				
+				<li>
+				Barbarino G.<br>
+				<a href="http://arxiv.org/abs/1808.05555"><i>Conjectures on Perturbations of Hermitian Sequences</i></a><br>
+				Arxiv (2018)
+				</li>
+				
+				
+				
+				
+				<li>
+				Barbarino G.<br>
+				<a href="http://arxiv.org/abs/1710.00810"><i>Diagonal Matrix Sequences and their Spectral Symbols</i></a><br>
+				Arxiv (2017)
+				</li>
+				
+				
+				<li>
+				Barbarino G.<br> <a href="https://arxiv.org/abs/1608.01372"><i>Permutation NMF</i></a><br>
+				Arxiv (2016)
+				</li>
+				
+				
+
+
+				
+				
+
+				
+
+
+
+				
+				
+				
+			</ul>
+		</div>
+		
+		
+		<div id="art" class="app" >  
+			<h3 class="res">Articles:</h3>
+			<ul class="art">
+				
+				
+					<li>
+				Barbarino G., Cavassi R.,
+				<a href="http://people.disim.univaq.it/~antonio.cicone/">Cicone A.</a>
+				<br>
+				<a href="https://doi.org/10.1016/j.laa.2024.06.002"><i>  Extension and convergence analysis of Iterative Filtering to spherical data</i></a><br>
+				Linear Algebra and its Applications 721, Pages 542-576  (Sep 2025) - <a href="https://arxiv.org/abs/2311.18657"> PDF </a>
+				</li>		
+				
+				
+				<li>
+				Barbarino G., 
+				<br>
+				<a href="https://doi.org/10.1016/j.laa.2024.03.027"><i>
+				On the Periodicity of Singular Vectors and the Holomorphic Block-Circulant SVD on the Unit Circumference</i></a>
+				<br>
+				Linear Algebra and its Applications 721, pp. 465-483 (Sep 2025) - <a href="https://arxiv.org/abs/2312.00707"> PDF </a>
+				</li>
+				
+				<li>
+				Barbarino G., 
+				<a href="https://www.2pi.se/">Ekström S.-E.</a>,
+				<a href="https://www.mat.uniroma2.it/~garoni/">Garoni C.</a>,
+				<a href="https://www.linkedin.com/in/david-meadon-993129a6/?originalSubdomain=se">Meadon D.</a>,
+				<a href="http://scienze-como.uninsubria.it/serra/">Serra-Capizzano S.</a>,
+				<a href="https://www.aueb.gr/en/faculty_page/vassalos-paraskevas">Vassalos P.</a><br>
+				<a href="https://www.sciencedirect.com/science/article/pii/S0096300325001353"><i>
+				Spectral properties of flipped Toeplitz matrices and computational applications</i></a>
+				<br>
+				Applied Mathematics and Computation (Mar 2025).
+				</li>
+				
+				
+				<li>
+				Barbarino G., 
+				<a href="https://www.researchgate.net/profile/Melker_Claesson">Claesson M.</a>, 
+				<a href="https://www.2pi.se/">Ekström S.-E.</a>,
+				<a href="https://www.mat.uniroma2.it/~garoni/">Garoni C.</a>, 
+				<a href="https://www.linkedin.com/in/david-meadon-993129a6/?originalSubdomain=se">Meadon D.</a>,
+				<a href="https://www.mat.uniroma2.it/~speleers/">Speleers H.</a><br>
+				<a href="https://link.springer.com/article/10.1007/s10543-024-01041-w"><i> 
+				Matrix-less spectral approximation for large structured matrices</i></a><br>
+				Bit Numer Math 65, 2 (Mar 2025)
+				</li>
+				
+				
+				
+				<li>
+				Barbarino G., <a href="https://www.mat.uniroma2.it/~garoni/">Garoni C.</a><br>
+				<a href="https://journals.uwyo.edu/index.php/ela/article/view/8929"><i>GLT sequences and normal matrices</i></a><br>
+				 The Electronic Journal of Linear Algebra  41, pp. 1-20 (Jan 2025)
+				</li>
+				
 				
 				<li>
 				 <a href="https://sites.google.com/view/maryamabdolali/">Abdolali M.</a>,
@@ -810,17 +890,6 @@
 				</li>
 				
 				
-				<li>
-				Barbarino G., 
-				<a href="https://www.2pi.se/">Ekström S.-E.</a>,
-				<a href="http://scienze-como.uninsubria.it/serra/">Serra-Capizzano S.</a>,
-				<a href="https://www.aueb.gr/en/faculty_page/vassalos-paraskevas">Vassalos P.</a>
-				<br>
-				<a href="https://arxiv.org/abs/2203.06992"><i> 
-				Theoretical results for eigenvalues, singular values, and eigenvectors of (flipped) Toeplitz matrices and related computational proposals</i></a><br>
-				 Arxiv (Jul 2022).
-				</li>
-				
 				
 				
 				<li>
@@ -900,27 +969,6 @@
 				</li>
 				
 				<li>
-				Barbarino G.<br>
-				<a href="http://arxiv.org/abs/1807.06528"><i>Notes on asymptotic eigenvalues distribution on complex circles</i></a><br>
-				Arxiv (2018)
-				</li>
-				
-				<li>
-				Barbarino G.<br>
-				<a href="http://arxiv.org/abs/1808.05555"><i>Conjectures on Perturbations of Hermitian Sequences</i></a><br>
-				Arxiv (2018)
-				</li>
-				
-				
-				
-				
-				<li>
-				Barbarino G.<br>
-				<a href="http://arxiv.org/abs/1710.00810"><i>Diagonal Matrix Sequences and their Spectral Symbols</i></a><br>
-				Arxiv (2017)
-				</li>
-				
-				<li>
 				Barbarino G., <a href="https://www.mat.uniroma2.it/~garoni/">Garoni C.</a><br>
 				<a href="https://journals.uwyo.edu/index.php/ela/article/view/1805"><i>From convergence in measure to convergence of matrix-sequences through concave functions and
 				singular values</i></a><br>
@@ -933,26 +981,11 @@
 				</li>
 
 				
-				<li>
-				Barbarino G.<br> <a href="https://arxiv.org/abs/1608.01372"><i>Permutation NMF</i></a><br>
-				Arxiv (2016)
-				</li>
-				
-				
-
-
-				
-				
-
-				
-
-
-
-				
-				
-				
 			</ul>
 		</div>
+		
+		
+		
 		<div id="con" class="app" >  
 			<h3 class="res">Conferences, Summer Schools and Presentations</h3>
 			<ul class="art">
