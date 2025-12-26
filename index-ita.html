@@ -57,36 +57,6 @@
 
 	<menu id="dida-menu">
 		<h2 class="major">Menu</h2>
-		<h3>Tesi</h3>
-		<ul>
-			<li>
-				<div style="display:block; cursor:pointer"
-				onclick="
-				var x = document.getElementsByClassName('app');
-				for (i = 0; i < x.length; i++) x[i].style.display='none';
-				document.getElementById('tesi').style.display='block';
-				return false;">
-				Triennale</div>
-			</li>
-			<li>
-				<div style="display:block; cursor:pointer"
-				onclick="
-				var x = document.getElementsByClassName('app');
-				for (i = 0; i < x.length; i++) x[i].style.display='none';
-				document.getElementById('Thesis').style.display='block';
-				return false;">
-				Magistrale</div>
-			</li>
-			<li>
-				<div style="display:block; cursor:pointer"
-				onclick="
-				var x = document.getElementsByClassName('app');
-				for (i = 0; i < x.length; i++) x[i].style.display='none';
-				document.getElementById('Doc-thesis').style.display='block';
-				return false;">
-				Dottorato</div>
-			</li>
-		</ul>
 		<h3>Corsi</h3>
 		<ul>
 			<li>
@@ -98,6 +68,13 @@
 				return false;">
 				Topics in Low Rank Factorization and Data Analysis</div>
 			</li>
+			
+		</ul>
+		
+		<span style="display: inline; cursor:pointer" onclick="var x = (document.getElementById('old-courses').style.display == 'block') ? document.getElementById('old-courses').style.display = 'none': document.getElementById('old-courses').style.display ='block';">
+			<a><h3>Vecchi Corsi</h3></a></span> 
+			<div id="old-courses" class="men" style="display:none">     
+		<ul>
 			<li>
 				<div style="display:block; cursor:pointer"
 				onclick="
@@ -235,6 +212,41 @@
 				Reti Neurali</div>
 			</li>
 		</ul>
+		</div>
+		
+		<span style="display: inline; cursor:pointer" onclick="var x = (document.getElementById('theses').style.display == 'block') ? document.getElementById('theses').style.display = 'none': document.getElementById('theses').style.display ='block';">
+			<a><h3>Tesi</h3></a></span>
+			<div id="theses" class="men" style="display:none"> 
+		<ul>
+			<li>
+				<div style="display:block; cursor:pointer"
+				onclick="
+				var x = document.getElementsByClassName('app');
+				for (i = 0; i < x.length; i++) x[i].style.display='none';
+				document.getElementById('tesi').style.display='block';
+				return false;">
+				Triennale</div>
+			</li>
+			<li>
+				<div style="display:block; cursor:pointer"
+				onclick="
+				var x = document.getElementsByClassName('app');
+				for (i = 0; i < x.length; i++) x[i].style.display='none';
+				document.getElementById('Thesis').style.display='block';
+				return false;">
+				Magistrale</div>
+			</li>
+			<li>
+				<div style="display:block; cursor:pointer"
+				onclick="
+				var x = document.getElementsByClassName('app');
+				for (i = 0; i < x.length; i++) x[i].style.display='none';
+				document.getElementById('Doc-thesis').style.display='block';
+				return false;">
+				Dottorato</div>
+			</li>
+		</ul>
+		</div>
 	</menu>
 
 
@@ -1235,6 +1247,7 @@ Reviewer presso <a href=https://zbmath.org/><b>ZbMATH</b></a> ( Zentralblatt MAT
  e per
  <span style="display: inline; cursor:pointer" onclick="var x = (document.getElementById('rev-journal').style.display == 'block') ? document.getElementById('rev-journal').style.display = 'none': document.getElementById('rev-journal').style.display ='block';">
 	 <a><b>riviste scientifiche</b></a></span> 
+  (clicca per una lista parziale)
  <div id="rev-journal" class="app">     
 	 <ul>
 	<li>
